@@ -53,7 +53,8 @@ def write_file_data(path, content):
 if __name__ == '__main__':
     choice = input('Would you rather encode(e) or decode(d) a file :')
 
-    input_path = input('Input file path :')
-    output_path = input('Output file path :')
+    input_path = input('Input file path : ')
+    output_path = input('Output file path : ')
     write_file_data(output_path,
                     decode(read_file_data(input_path)) if choice == 'd' else encode(read_file_data(input_path)))
+    print('Done!')
