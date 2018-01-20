@@ -33,10 +33,6 @@ def decode(content):
     return decoded_content
 
 
-def rate(decoded_content, encoded_content):
-    return (len(decoded_content) / len(encoded_content)) * 100
-
-
 def read_file_data(path):
     if os.path.isfile(path):
         with open(path) as file:
@@ -51,10 +47,11 @@ def write_file_data(path, content):
 
 
 if __name__ == '__main__':
-    choice = input('Would you rather encode(e) or decode(d) a file :')
+    choice = input('Would you rather encode(e) or decode(d) a file : ')
 
     input_path = input('Input file path : ')
     output_path = input('Output file path : ')
     write_file_data(output_path,
                     decode(read_file_data(input_path)) if choice == 'd' else encode(read_file_data(input_path)))
     print('Done!')
+    print()
